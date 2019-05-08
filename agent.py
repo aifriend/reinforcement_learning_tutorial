@@ -85,7 +85,7 @@ class Agent():
         ####pick the action
         action, value = self.chooseAction(pi, values, tau)
 
-        nextState, _, _ = state.take_action(action)
+        nextState, _, _ = state.takeAction(action)
 
         NN_value = -self.get_preds(nextState)[0]
 
@@ -131,7 +131,7 @@ class Agent():
             probs = probs[allowedActions]
 
             for idx, action in enumerate(allowedActions):
-                newState, _, _ = leaf.state.take_action(action)
+                newState, _, _ = leaf.state.takeAction(action)
                 if newState.id not in self.mcts.tree:
                     node = mc.Node(newState)
                     self.mcts.addNode(node)
