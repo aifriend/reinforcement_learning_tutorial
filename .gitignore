@@ -1,2 +1,5 @@
 
 run/logs/logger_memory.log
+run.ipynb
+*.log
+run/models/model.png
